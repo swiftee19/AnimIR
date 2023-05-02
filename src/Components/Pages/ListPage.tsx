@@ -1,8 +1,4 @@
-import {
-  Box,
-  Stack,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Stack, Button, Text } from "@chakra-ui/react";
 import { SingleCard } from "../SingleCard";
 import { useQuery } from "@apollo/client";
 import * as React from "react";
@@ -45,6 +41,30 @@ export const ListPage = (props: any) => {
   };
 
   const [page, setPage] = React.useState(1);
+
+  function NextPage() {
+    setPage((page) => {
+      if (page > 9) {
+        setRefresh(!refresh);
+        return 1;
+      } else {
+        setRefresh(!refresh);
+        return page + 1;
+      }
+    });
+  }
+
+  function PrevPage() {
+    setPage((page) => {
+      if (page < 2) {
+        setRefresh(!refresh);
+        return 10;
+      } else {
+        setRefresh(!refresh);
+        return page - 1;
+      }
+    });
+  }
 
   const { loading, error, data } = useQuery(GetAllAnimes, {
     variables: {
@@ -102,10 +122,11 @@ export const ListPage = (props: any) => {
             left="50%"
             transform="translate(-50%, -50%)"
           >
-            <Button colorScheme="teal" variant="solid">
+            <Button colorScheme="teal" variant="solid" onClick={PrevPage}>
               Prev
             </Button>
-            <Button colorScheme="teal" variant="solid">
+            <Text>Page: {page}</Text>
+            <Button colorScheme="teal" variant="solid" onClick={NextPage}>
               Next
             </Button>
           </Stack>
