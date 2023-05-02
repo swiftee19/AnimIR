@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 
 export const GetAnimesByGenre = gql(`
 query getAllAnime($genre:String){
-    Page(page: 1, perPage: 100){
+    Page(page: 1, perPage: 200){
       media(type:ANIME, sort:POPULARITY_DESC, genre_in:[$genre]){
         genres
         id
