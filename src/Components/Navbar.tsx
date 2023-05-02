@@ -1,20 +1,11 @@
 import {
   Tabs,
   TabList,
-  TabPanels,
   Tab,
-  TabPanel,
-  Flex,
-  Grid,
-  Text,
-  Box,
-  Container,
-  Heading,
-  position,
+  Box
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import React from "react";
 
 export default function Navbar() {
   return (

@@ -76,7 +76,7 @@ export const ListPage = (props: any) => {
   if (error) return <p>ERROR</p>;
 
   return (
-    <div>
+    <Box>
       {props.data && (
         <div>
           <Box h="7vh" p={0} m={0}></Box>
@@ -93,6 +93,7 @@ export const ListPage = (props: any) => {
               />
             );
           })}
+          
         </div>
       )}
 
@@ -113,25 +114,27 @@ export const ListPage = (props: any) => {
             );
           })}
           <Stack
-            pos="absolute"
-            p="1rem"
-            m="2rem"
-            direction="row"
-            spacing={4}
-            align="center"
-            left="50%"
-            transform="translate(-50%, -50%)"
+            pos="relative"
+            py="1rem"
+            mb="2rem"
+            display="flex"
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            alignContent="center"
+            bg={["blue.50"]}
           >
             <Button colorScheme="teal" variant="solid" onClick={PrevPage}>
               Prev
             </Button>
-            <Text>Page: {page}</Text>
+            <Text px="1rem">Page: {page}</Text>
             <Button colorScheme="teal" variant="solid" onClick={NextPage}>
               Next
             </Button>
           </Stack>
+          <Box paddingBottom="3vh"></Box>
         </div>
       )}
-    </div>
+    </Box>
   );
 };

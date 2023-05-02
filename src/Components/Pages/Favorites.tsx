@@ -52,6 +52,7 @@ export const Favorites = () => {
           <Text>Go discover new animes :D</Text>
         </div>)
       }
+      <Box paddingBottom="3rem"></Box>
     </div>
   );
 };

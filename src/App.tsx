@@ -21,11 +21,12 @@ import { SearchPage } from "./Components/Pages/SearchPage";
 import Navbar from "./Components/Navbar";
 import { DetailsPage } from "./Components/Pages/DetailsPage";
 import { DataContext } from "./Components/DataContext";
+import Footer from "./Components/Footer";
 
 export const App = () => {
-  const [data, setData] = React.useState<any>(null)
+  const [data, setData] = React.useState<any>(null);
   return (
-    <DataContext.Provider value={{data, setData}}>
+    <DataContext.Provider value={{ data, setData }}>
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <Navbar />
@@ -35,6 +36,7 @@ export const App = () => {
             <Route path="/Favorites" element={<Favorites />}></Route>
             <Route path="/Search" element={<SearchPage />}></Route>
           </Routes>
+          <Footer />
         </BrowserRouter>
       </ChakraProvider>
     </DataContext.Provider>
