@@ -132,7 +132,7 @@ export const ListPage = (props: any) => {
               Next
             </Button>
           </Stack>
-          <Box paddingBottom="3vh"></Box>
+          <Box paddingBottom="5vh"></Box>
         </div>
       )}
     </Box>
