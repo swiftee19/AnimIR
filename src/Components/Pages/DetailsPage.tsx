@@ -79,6 +79,7 @@ export const DetailsPage = (props: DetailsPageProps) => {
           </CardFooter>
         </Stack>
       </Card>
+      <Box paddingBottom="3rem"></Box>
     </div>
   );
 };
